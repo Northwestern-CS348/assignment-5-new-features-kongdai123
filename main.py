@@ -64,7 +64,7 @@ class UnitTests(unittest.TestCase):
     def test01_01(self):
         core.buildFOPC('Three of the red blocks are cubes')
         self.assertTrue(kb.betterAsk([['inst', 'Block0', 'cube']]))
-
+    
     def test01_02(self):
         core.buildFOPC('Three of the red blocks are cubes')
         self.assertTrue(kb.betterAsk([['inst', 'Block1', 'cube']]))

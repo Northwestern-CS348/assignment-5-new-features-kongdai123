@@ -56,6 +56,7 @@ def buildFOPC(sentence):
     if category == "S:Feature":
         student_code.buildFeatureStatement(doc)
 
+
     longTermMemory = recentMemory
     print(lf+"Long Term Memory", longTermMemory)
 
