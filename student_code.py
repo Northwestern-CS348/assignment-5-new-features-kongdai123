@@ -42,7 +42,7 @@ def buildFeatureStatement(tree):
 
 ##### Your code to extractSubject here
     target = languageTools.extractExistentialTarget(root)#cube
-    primary = languageTools.extractSubjectDeep(root) #blocks
+    # primary = languageTools.extractSubjectDeep(root) #blocks
     sec = languageTools.extractSubject(root) #Three
     # Once we have the primary noun, we then want to resolve it, that is, figure out what it refers
     # to using core.resolveObjectFOPC. Resolve object will give us a list of names that are referred to by the
@@ -52,20 +52,18 @@ def buildFeatureStatement(tree):
 ##### Your code to resolveObjectFOPC here -- this will build some FOPC and Assert it
     # names = core.resolveObjectFOPC(primary)#an array of corresponding blocks
     other = core.resolveObjectFOPC(sec)
-    print (other)
     # Then we need to figure out what is going to modify it. To do this, we go back to our verb and for
     # any modifiers associted with it. These will either be prepositional phrases or adjectives.
     # To get the prepositional phrases, we can use core.findAndAttachPrepObjectsFOPC that takes the ROOT and
     # the names and will build any FOPC associated with prepositional objects it finds and assert it.
 
 ##### Your code to resolveObjectFOPC here -- this takes the root, the primary (suibject) and your names
-    prepositional = core.findAndAttachPrepObjectsFOPC(root, primary , other)
+    core.findAndAttachPrepObjectsFOPC(root, sec , other)
     # Next we pull out any features associated with the object and attach them to the object. We can use
     # core.findAndAssertFeaturesFOPC to do this.  Like core.findAndAttachPrepObjectsFOPC, it takes the ROOT and
     # a list of names and builds the FOPC associated with any adjectives it finds
 
 ##### Your code to findAndAssertFeaturesFOPC here -- this takes the root and your names
-    features = core.findAndAssertFeaturesFOPC(root, other)
-    print (features)
+    core.findAndAssertFeaturesFOPC(root, other)
 ##### Your code to findAndAssertDefinitionsFOPC -- this takes the root and your names
-    features = core.findAndAssertDefinitionsFOPC(root, other)
+    core.findAndAssertDefinitionsFOPC(root, other)
